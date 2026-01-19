@@ -1,6 +1,6 @@
-package com.antonkuzmn1.xqwkeburenochekprison;
+package com.antonkuzmn1.xqwkeburenochekshrooms;
 
-import com.antonkuzmn1.xqwkeburenochekprison.registry.*;
+import com.antonkuzmn1.xqwkeburenochekshrooms.registry.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

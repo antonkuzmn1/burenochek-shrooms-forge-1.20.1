@@ -1,8 +1,8 @@
-package com.antonkuzmn1.xqwkeburenochekprison.client;
+package com.antonkuzmn1.xqwkeburenochekshrooms.client;
 
-import com.antonkuzmn1.xqwkeburenochekprison.XqwkeBurenochekShroomsMod;
-import com.antonkuzmn1.xqwkeburenochekprison.client.renderers.ToadstoolRenderer;
-import com.antonkuzmn1.xqwkeburenochekprison.registry.ModEntities;
+import com.antonkuzmn1.xqwkeburenochekshrooms.XqwkeBurenochekShroomsMod;
+import com.antonkuzmn1.xqwkeburenochekshrooms.client.renderers.ToadstoolEntityRenderer;
+import com.antonkuzmn1.xqwkeburenochekshrooms.registry.ModEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,7 +21,7 @@ public class ClientModEvents {
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModEntities.TOADSTOOL.get(), ToadstoolRenderer::new);
+        event.registerEntityRenderer(ModEntities.TOADSTOOL.get(), ToadstoolEntityRenderer::new);
     }
 
     @SubscribeEvent

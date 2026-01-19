@@ -1,4 +1,4 @@
-package com.antonkuzmn1.xqwkeburenochekprison.entities;
+package com.antonkuzmn1.xqwkeburenochekshrooms.entities;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;

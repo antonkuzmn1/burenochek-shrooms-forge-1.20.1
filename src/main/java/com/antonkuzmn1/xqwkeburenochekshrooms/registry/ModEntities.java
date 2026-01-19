@@ -1,7 +1,7 @@
-package com.antonkuzmn1.xqwkeburenochekprison.registry;
+package com.antonkuzmn1.xqwkeburenochekshrooms.registry;
 
-import com.antonkuzmn1.xqwkeburenochekprison.XqwkeBurenochekShroomsMod;
-import com.antonkuzmn1.xqwkeburenochekprison.entities.ToadstoolEntity;
+import com.antonkuzmn1.xqwkeburenochekshrooms.XqwkeBurenochekShroomsMod;
+import com.antonkuzmn1.xqwkeburenochekshrooms.entities.ToadstoolEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
