@@ -1,11 +1,15 @@
 package com.antonkuzmn1.xqwkeburenochekshrooms.items;
 
 import com.antonkuzmn1.xqwkeburenochekshrooms.client.renderers.ToadstoolItemRenderer;
+import com.antonkuzmn1.xqwkeburenochekshrooms.data.ToadstoolInfectedBlocks;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -45,12 +49,17 @@ public class ToadstoolItem extends Item implements GeoItem {
 
     @Override
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
-        BlockState state = context.getLevel().getBlockState(context.getClickedPos());
-
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        BlockState state = level.getBlockState(pos);
         ResourceLocation targetId = ForgeRegistries.BLOCKS.getKey(state.getBlock());
 
-        if (targetId != null && targetId.toString().equals("minecraft:white_bed")) {
-            System.out.println("Clicked!");
+        if (targetId != null && ToadstoolInfectedBlocks.verify(level, pos)) {
+            if (!level.isClientSide) {
+                ServerLevel serverLevel = (ServerLevel) level;
+                ToadstoolInfectedBlocks infectedBlocks = ToadstoolInfectedBlocks.get(serverLevel);
+                infectedBlocks.add(serverLevel, pos);
+            }
             return InteractionResult.SUCCESS;
         }
 

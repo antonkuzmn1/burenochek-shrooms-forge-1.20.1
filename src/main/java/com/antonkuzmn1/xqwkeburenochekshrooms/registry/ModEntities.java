@@ -13,7 +13,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<ToadstoolEntity>> TOADSTOOL = ENTITIES.register("toadstool", () -> EntityType.Builder
             .of(ToadstoolEntity::new, MobCategory.MISC)
-            .sized(1.0f, 1.0f)
+            .sized(0.5f, 0.5f)
             .build("toadstool")
     );
 }
